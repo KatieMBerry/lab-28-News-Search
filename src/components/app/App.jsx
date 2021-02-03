@@ -1,21 +1,8 @@
 import React from 'react';
 import ArticleList from '../../components/presentational/ArticleList';
+import NewsSearch from '../containers/NewsSearch';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <>
-        <Router>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              // render={(routerProps) => <CharacterList {...routerProps} />}
-              component={ArticleList}
-            />
-          </Switch>
-        </Router>
-      </>
-    );
-  }
+export default function App() {
+  return <NewsSearch />;
 }
+
