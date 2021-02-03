@@ -4,3 +4,4 @@ import { Link } from 'react-router-dom';
 
 const Article = ({ title, author, description }) => {
 
+}
