@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const SearchInput = ({ searchInput, onChange }) => (
     <>
-        <label htmlFor="searchInput">Search</label>
         <input
             id="searchInput"
             type="text"
+            placeholder="Search"
             value={searchInput}
             onChange={onChange} />
     </>

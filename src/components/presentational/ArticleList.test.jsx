@@ -7,10 +7,6 @@ describe('ArticleList component', () => {
     it('renders ArticleList', () => {
         const { asFragment } = render(<ArticleList
             articles={[]}
-            title='New Title'
-            author='WSJ'
-            description='Inquiring minds...'
-            urlToImage='urlToMyImage'
         />);
         expect(asFragment()).toMatchSnapshot();
     });

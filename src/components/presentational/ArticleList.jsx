@@ -4,14 +4,13 @@ import Article from './Article';
 
 const ArticleList = ({ articles }) => {
     const articleData = articles.map(article => (
-        <li data-test-id="display"
-            key={article.title}>
+        <li key={article.title}>
             <Article {...article} />
         </li>
     ));
 
     return (
-        <ul>
+        <ul data-testid="display">
             {articleData}
         </ul>
     );
