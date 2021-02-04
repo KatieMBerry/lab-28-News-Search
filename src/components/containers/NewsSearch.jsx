@@ -10,16 +10,25 @@ export default class NewsSearch extends Component {
         searchInput: ''
     }
 
-    componentDidMount() {
-        getArticles()
-            .then(articles => this.setState({ articles }))
-            .then(() => this.setState({ loading: false }));
-    }
+    // componentDidMount() {
+    //     getArticles()
+    //         .then(articles => this.setState({ articles }))
+    //         .then(() => this.setState({ loading: false }));
+    // }
+
+    fetchArticles = () => {
+        getArticles(this.state.search).then((articles) =>
+            this.setState({ articles })
+        );
+    };
 
     handleChange = ({ target }) => {
-        target.value.trim() && getArticles(target.value)
-            .then(articles => this.setState({ articles }));
-    }
+        this.setState({ search: target.value }, () => {
+            this.fetchArticles();
+        });
+        // target.value.trim() && getArticles(target.value)
+        //     .then(articles => this.setState({ articles }));
+    };
 
     render() {
         const { articles, loading } = this.state;
