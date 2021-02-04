@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component renders App 1`] = `
+exports[`SearchInput component renders SearchInput 1`] = `
 <DocumentFragment>
   <label
     for="searchInput"
@@ -10,10 +10,7 @@ exports[`App component renders App 1`] = `
   <input
     id="searchInput"
     type="text"
-    value=""
+    value="my_search_query"
   />
-  <h1>
-    Loading...
-  </h1>
 </DocumentFragment>
 `;

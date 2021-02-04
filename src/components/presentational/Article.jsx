@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const Article = ({ title, author, description, urlToImage }) => (
     <article>
-        <h3>{title}</h3>
-        <img src={urlToImage} />
-        <h4>{author}</h4>
+        <h3 style={{ color: '#c13e72' }}>{title}</h3>
+        <img src={urlToImage} style={{ width: '400px', height: '300px' }} />
+        <h4 style={{ color: '#1ca69d' }}>{author}</h4>
         <p>{description}</p>
     </article>
 );

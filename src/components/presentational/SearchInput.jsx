@@ -5,6 +5,7 @@ const SearchInput = ({ searchInput, onChange }) => (
     <>
         <label htmlFor="searchInput">Search</label>
         <input
+            id="searchInput"
             type="text"
             value={searchInput}
             onChange={onChange} />

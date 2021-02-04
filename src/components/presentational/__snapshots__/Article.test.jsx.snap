@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article component renders Article 1`] = `
+<DocumentFragment>
+  <article>
+    <h3
+      style="color: rgb(193, 62, 114);"
+    >
+      New Title
+    </h3>
+    <img
+      src="urlToMyImage"
+      style="width: 400px; height: 300px;"
+    />
+    <h4
+      style="color: rgb(28, 166, 157);"
+    >
+      WSJ
+    </h4>
+    <p>
+      Inquiring minds...
+    </p>
+  </article>
+</DocumentFragment>
+`;
