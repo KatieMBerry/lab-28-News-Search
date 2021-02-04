@@ -1,22 +1,33 @@
 import React, { Component } from 'react';
 import { getArticles } from '../../services/newsApi';
 import ArticleList from '../../components/presentational/ArticleList';
+import SearchInput from '../../components/presentational/SearchInput'
 
 export default class NewsSearch extends Component {
     state = {
-        articles: []
+        articles: [],
+        loading: true,
+        searchInput: 'headline'
     }
 
-    componentDidMount() {
+    componentDidMount() {//will take in searchInput
         getArticles()
             .then(articles => this.setState({ articles }));
     }
 
-    render() {
-        const { articles } = this.state;
+    handleChange = ({ target }) => {
+        this.setState({ searchInput: target.value });
+    }
 
+    render() {
+        const { articles, loading, searchInput } = this.state;
+        console.log(articles);
         return (
-            <ArticleList {...articles} />
+            <>
+                {/* <SearchInput
+                    searchInput={searchInput} /> */}
+                <ArticleList articles={articles} />
+            </>
         );
     }
 }

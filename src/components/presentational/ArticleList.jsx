@@ -4,8 +4,8 @@ import Article from './Article';
 
 const ArticleList = ({ articles }) => {
     const articleData = articles.map(article => (
-        <li key={articles.title}>
-            <Article {...articles} />
+        <li key={article.title}>
+            <Article {...article} />
         </li>
     ));
 
@@ -19,7 +19,8 @@ const ArticleList = ({ articles }) => {
 ArticleList.propTypes = {
     articles: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string.isRequired,
-        author: PropTypes.string.isRequired,
+        urlToImage: PropTypes.string,
+        author: PropTypes.string,
         description: PropTypes.string.isRequired
     })).isRequired
 };
