@@ -1,5 +1,5 @@
-export const getArticles = (searchInput) => {
-    return fetch(`https://newsapi.org/v2/everything?q=dogs&apiKey=56b02d0bc0a0430ab5492112f4e7fe17`)
+export const getArticles = (searchInput = 'food') => {
+    return fetch(`https://newsapi.org/v2/everything?q=${searchInput}&apiKey=${process.env.NEWS_API_KEY}`)
         .then(res => res.json())
         .then(json => json.articles);
 }

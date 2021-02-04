@@ -7,25 +7,30 @@ export default class NewsSearch extends Component {
     state = {
         articles: [],
         loading: true,
-        searchInput: 'headline'
+        searchInput: ''
     }
 
-    componentDidMount() {//will take in searchInput
+    componentDidMount() {
         getArticles()
-            .then(articles => this.setState({ articles }));
+            .then(articles => this.setState({ articles }))
+            .then(() => this.setState({ loading: false }));
     }
 
     handleChange = ({ target }) => {
-        this.setState({ searchInput: target.value });
+        target.value.trim() && getArticles(target.value)
+            .then(articles => this.setState({ articles }));
     }
 
     render() {
-        const { articles, loading, searchInput } = this.state;
+        const { articles, loading } = this.state;
+
         return (
             <>
-                {/* <SearchInput
-                    searchInput={searchInput} /> */}
-                <ArticleList articles={articles} />
+                <SearchInput
+                    onChange={this.handleChange} />
+                {!loading ? <ArticleList articles={articles} />
+                    : <h1>Loading...</h1>
+                }
             </>
         );
     }

@@ -19,8 +19,8 @@ const ArticleList = ({ articles }) => {
 ArticleList.propTypes = {
     articles: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string.isRequired,
-        urlToImage: PropTypes.string,
-        author: PropTypes.string,
+        urlToImage: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired
     })).isRequired
 };

@@ -12,8 +12,8 @@ const Article = ({ title, author, description, urlToImage }) => (
 
 Article.propTypes = {
     title: PropTypes.string.isRequired,
-    urlToImage: PropTypes.string,
-    author: PropTypes.string,
+    urlToImage: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
 };
 
