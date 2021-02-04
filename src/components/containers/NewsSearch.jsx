@@ -21,7 +21,6 @@ export default class NewsSearch extends Component {
 
     render() {
         const { articles, loading, searchInput } = this.state;
-        console.log(articles);
         return (
             <>
                 {/* <SearchInput
