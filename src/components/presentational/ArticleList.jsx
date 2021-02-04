@@ -4,7 +4,8 @@ import Article from './Article';
 
 const ArticleList = ({ articles }) => {
     const articleData = articles.map(article => (
-        <li key={article.title}>
+        <li data-test-id="display"
+            key={article.title}>
             <Article {...article} />
         </li>
     ));
