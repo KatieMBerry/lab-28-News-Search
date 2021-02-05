@@ -22,8 +22,8 @@ export default class NewsSearch extends Component {
     //     );
     // };
 
-    handleChange = ({ target }) => {
-        this.setState({ searchInput: target.value }, () => {
+    handleChange = async ({ target }) => {
+        await this.setState({ searchInput: target.value }, () => {
             target.value.trim() && getArticles(target.value)
                 .then(articles => this.setState({ articles, loading: false }));
             // this.fetchArticles();
